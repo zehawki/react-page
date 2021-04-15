@@ -2,11 +2,12 @@ import Checkbox from '@material-ui/core/Checkbox';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import TextField from '@material-ui/core/TextField';
 import Typography from '@material-ui/core/Typography';
-import { ImageUpload } from '@react-page/editor';
+import { ImageUpload, useUiTranslator } from '@react-page/editor';
 import React from 'react';
-import { ImageControlType } from '../types/controls';
+import type { ImageControlType } from '../types/controls';
 
 const ImageControls: ImageControlType = (props) => {
+  const { t } = useUiTranslator();
   return (
     <>
       {/* Button and existing image text box */}
@@ -26,17 +27,17 @@ const ImageControls: ImageControlType = (props) => {
               variant="body1"
               style={{ margin: '20px 16px 0 16px' }}
             >
-              {props.translations.or}
+              {t(props.translations.or)}
             </Typography>
           </>
         )}
         <TextField
-          placeholder={props.translations.srcPlaceholder}
-          label={
+          placeholder={t(props.translations.srcPlaceholder)}
+          label={t(
             props.imageUpload
               ? props.translations.haveUrl
               : props.translations.imageUrl
-          }
+          )}
           name="src"
           // style={{ flex: 1 }}
           value={props.data.src ?? ''}
@@ -52,8 +53,8 @@ const ImageControls: ImageControlType = (props) => {
 
       {/* Image link textbox and checkbox */}
       <TextField
-        placeholder={props.translations.hrefPlaceholder}
-        label={props.translations.hrefLabel}
+        placeholder={t(props.translations.hrefPlaceholder)}
+        label={t(props.translations.hrefLabel)}
         name="href"
         style={{ width: '400px' }}
         value={props.data.href ?? ''}
@@ -74,7 +75,7 @@ const ImageControls: ImageControlType = (props) => {
             }
           />
         }
-        label={props.translations.openNewWindow}
+        label={t(props.translations.openNewWindow)}
       />
     </>
   );
