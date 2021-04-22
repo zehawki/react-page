@@ -1,4 +1,4 @@
-import Resize from '@material-ui/icons/SettingsOverscan';
+import Resize from '@material-ui/icons/PhotoSizeSelectLarge';
 import React from 'react';
 import {
   useIsResizeMode,

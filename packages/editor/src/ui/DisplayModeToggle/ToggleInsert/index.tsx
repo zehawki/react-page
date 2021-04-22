@@ -1,4 +1,4 @@
-import ContentAdd from '@material-ui/icons/Add';
+import ContentAdd from '@material-ui/icons/LibraryAdd';
 import React from 'react';
 import {
   useIsInsertMode,
